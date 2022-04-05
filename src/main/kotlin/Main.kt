@@ -1,10 +1,10 @@
 package main.kotlin
 
 val primeSequence = sequence {
-    val primeNums = mutableListOf(1)
-    var num = primeNums.last()+1
+    val primeNums: MutableList<Int> = mutableListOf()
+    var num = 2
     while (true){
-        if(primeNums.drop(1).none { num%it == 0}){
+        if(primeNums.none { num%it == 0}){
             primeNums.add(num)
             yield(num)
         }
